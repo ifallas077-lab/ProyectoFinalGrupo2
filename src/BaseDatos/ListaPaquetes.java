@@ -64,5 +64,16 @@ public class ListaPaquetes {
         System.out.println("EL CODIGO DEL PAQUETE NO ESTA EN LA LISTA");
         return false;
     }
+    // buscar paquete
+    public Paquete buscar(int codigo) {
+        Nodo actual = primero;
+        while (actual !=null) {
+            if (actual.getDato() != null && actual.getDato().getCodigo() == codigo){
+                return actual.getDato();
+            }
+            actual =actual.getSiguiente();
+        }
+        return null;
+    }
 
 }
